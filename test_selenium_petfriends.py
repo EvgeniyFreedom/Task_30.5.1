@@ -17,8 +17,8 @@ def driver():
 
 def test_show_all_pets(driver):
     # Вход на сайт
-    driver.find_element(By.ID, 'email').send_keys('your_email')
-    driver.find_element(By.ID, 'pass').send_keys('your_password')
+    driver.find_element(By.ID, 'email').send_keys('my_email')
+    driver.find_element(By.ID, 'pass').send_keys('my_password')
     driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
 
     # Переход на страницу всех питомцев
@@ -50,7 +50,7 @@ def test_show_all_pets(driver):
     username = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.TAG_NAME, 'h2'))
     ).text
-    assert username == "your_name"
+    assert username == "my_name"
 
     # Ожидаем загрузку таблицы
     WebDriverWait(driver, 10).until(
